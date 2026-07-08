@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$dbFile = __DIR__ . '/dev.db';
+$dbFile = __DIR__ . '/../dev.db';
 
 try {
     $pdo = new PDO("sqlite:$dbFile");
