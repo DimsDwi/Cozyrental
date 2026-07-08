@@ -28,7 +28,7 @@ $bookingError = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book'])) {
     if (!isLoggedIn()) {
-        $bookingError = 'You must be logged in to book a vehicle.';
+        $bookingError = 'Anda harus login untuk memesan kendaraan.';
     } else {
         $startDate = $_POST['startDate'] ?? '';
         $endDate = $_POST['endDate'] ?? '';
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book'])) {
                 $bookingError = 'Booking failed: ' . $e->getMessage();
             }
         } else {
-            $bookingError = 'Please select start and end dates.';
+            $bookingError = 'Silakan pilih tanggal mulai dan tanggal selesai.';
         }
     }
 }
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book'])) {
 
 <main class="container">
   <?php if ($bookingSuccess): ?>
-    <div class="success-msg" style="margin-bottom: 2rem;">✓ Booking submitted successfully! <a href="dashboard.php" style="color:var(--primary)">View in Dashboard</a></div>
+    <div class="success-msg" style="margin-bottom: 2rem;">✓ Pemesanan berhasil dikirim! <a href="dashboard.php" style="color:var(--primary)">Lihat di Dashboard</a></div>
   <?php endif; ?>
   <?php if ($bookingError): ?>
     <div class="error-msg" style="margin-bottom: 2rem;"><?php echo htmlspecialchars($bookingError); ?></div>
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book'])) {
       <?php endif; ?>
       
       <?php if(is_array($features) && count($features) > 0): ?>
-      <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Features</h3>
+      <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Fitur Kendaraan</h3>
       <ul style="list-style: inside; color: var(--text-muted); line-height: 2;">
         <?php foreach($features as $feature): ?>
           <li><?php echo htmlspecialchars($feature); ?></li>
@@ -86,32 +86,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book'])) {
     <div>
       <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;"><?php echo htmlspecialchars($car['brand'] . ' ' . $car['model']); ?></h1>
       <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1rem;">
-        <?php echo htmlspecialchars($car['category'] . ' • ' . ucfirst(strtolower($car['transmission'])) . ' • ' . $car['seats'] . ' Seats • ' . $car['fuel']); ?>
+        <?php echo htmlspecialchars($car['category'] . ' • ' . ucfirst(strtolower($car['transmission'])) . ' • ' . $car['seats'] . ' Kursi • ' . $car['fuel']); ?>
       </p>
       
       <div style="font-size: 2rem; color: var(--primary); font-weight: bold; margin-bottom: 2rem;">
-        $<?php echo htmlspecialchars($car['pricePerDay']); ?> <span style="font-size: 1rem; color: var(--text-muted); font-weight: normal;">/ day</span>
+        $<?php echo htmlspecialchars($car['pricePerDay']); ?> <span style="font-size: 1rem; color: var(--text-muted); font-weight: normal;">/ hari</span>
       </div>
 
       <div class="auth-container" style="margin: 0; max-width: 100%;">
-        <h3>Book This Vehicle</h3>
+        <h3>Pesan Kendaraan Ini</h3>
         <?php if (isLoggedIn()): ?>
           <form method="POST" style="margin-top: 1rem;">
             <div class="form-group">
-              <label>Start Date</label>
+              <label>Tanggal Mulai</label>
               <input type="date" name="startDate" min="<?php echo date('Y-m-d'); ?>" required>
             </div>
             <div class="form-group">
-              <label>End Date</label>
+              <label>Tanggal Selesai</label>
               <input type="date" name="endDate" min="<?php echo date('Y-m-d'); ?>" required>
             </div>
             <button type="submit" name="book" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1.25rem; font-size: 1.15rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 1rem; box-shadow: 0 10px 30px rgba(99,102,241,0.4); border-radius: 14px;">
-              &#10024; Confirm Booking
+              &#10024; Konfirmasi Pemesanan
             </button>
           </form>
         <?php else: ?>
-          <p style="margin-top: 1rem; color: var(--text-muted);">Please log in to book this vehicle.</p>
-          <a href="login.php" class="btn-primary" style="margin-top: 1rem; display: inline-block;">Log In to Book</a>
+          <p style="margin-top: 1rem; color: var(--text-muted);">Silakan login untuk memesan kendaraan ini.</p>
+          <a href="login.php" class="btn-primary" style="margin-top: 1rem; display: inline-block;">Login untuk Memesan</a>
         <?php endif; ?>
       </div>
     </div>

@@ -47,8 +47,8 @@ require_once 'header.php';
     <div style="text-align: center; margin-bottom: 2rem;">
       <a href="index.php" class="logo" style="font-size: 1.6rem;">Cozy<span>Rental</span></a>
     </div>
-    <h2>Create Account</h2>
-    <p class="auth-subtitle">Join thousands of drivers. It's free.</p>
+    <h2>Buat Akun</h2>
+    <p class="auth-subtitle">Bergabung dengan ribuan pengemudi. Gratis.</p>
 
     <?php if ($error): ?>
       <div class="error-msg">&#10007; <?php echo htmlspecialchars($error); ?></div>
@@ -59,25 +59,25 @@ require_once 'header.php';
 
     <form method="POST" action="register.php">
       <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name">
+        <label for="name">Nama Lengkap</label>
+        <input type="text" id="name" name="name" placeholder="Budi Santoso" required autocomplete="name">
       </div>
       <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email">
+        <label for="email">Alamat Email</label>
+        <input type="email" id="email" name="email" placeholder="budi@example.com" required autocomplete="email">
       </div>
       <div class="form-group">
-        <label for="password">Password <span style="color:var(--muted);font-size:0.75rem;font-weight:400;">(min. 6 characters)</span></label>
+        <label for="password">Kata Sandi <span style="color:var(--muted);font-size:0.75rem;font-weight:400;">(min. 6 karakter)</span></label>
         <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="new-password">
       </div>
       <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:0.85rem;margin-top:0.5rem;font-size:0.95rem;">
-        Create Free Account &#8594;
+        Buat Akun Gratis &#8594;
       </button>
     </form>
 
     <hr class="divider">
     <p style="text-align:center;font-size:0.875rem;color:var(--muted);">
-      Already have an account? <a href="login.php" style="color:var(--primary-light);font-weight:600;">Sign in</a>
+      Sudah punya akun? <a href="login.php" style="color:var(--primary-light);font-weight:600;">Masuk</a>
     </p>
   </div>
 </main>

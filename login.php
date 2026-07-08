@@ -32,8 +32,8 @@ require_once 'header.php';
     <div style="text-align: center; margin-bottom: 2rem;">
       <a href="index.php" class="logo" style="font-size: 1.6rem;">Cozy<span>Rental</span></a>
     </div>
-    <h2>Welcome Back</h2>
-    <p class="auth-subtitle">Sign in to manage your bookings</p>
+    <h2>Selamat Datang Kembali</h2>
+    <p class="auth-subtitle">Masuk untuk mengelola pemesanan Anda</p>
 
     <?php if ($error): ?>
       <div class="error-msg">&#10007; <?php echo htmlspecialchars($error); ?></div>
@@ -41,22 +41,22 @@ require_once 'header.php';
 
     <form method="POST" action="login.php">
       <div class="form-group">
-        <label for="email">Email Address</label>
+        <label for="email">Alamat Email</label>
         <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email">
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
+        <label for="password">Kata Sandi</label>
         <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
       </div>
       <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:0.85rem;margin-top:0.5rem;font-size:0.95rem;">
-        Sign In &#8594;
+        Masuk &#8594;
       </button>
     </form>
 
     <hr class="divider">
 
     <p style="text-align:center;font-size:0.875rem;color:var(--muted);">
-      Don't have an account? <a href="register.php" style="color:var(--primary-light);font-weight:600;">Create one free</a>
+      Belum punya akun? <a href="register.php" style="color:var(--primary-light);font-weight:600;">Daftar gratis</a>
     </p>
   </div>
 </main>

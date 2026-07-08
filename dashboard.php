@@ -35,9 +35,9 @@ $past     = array_filter($bookings, fn($b) => $b['status'] === 'COMPLETED' || $b
           <?php echo strtoupper(substr($user['name'], 0, 1)); ?>
         </div>
         <div>
-          <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem;">Cozy Member</p>
+          <p style="color: rgba(255,255,255,0.5); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem;">Anggota Cozy</p>
           <h1 style="font-size: 2.5rem; font-weight: 900; letter-spacing: -1px; line-height: 1; margin-bottom: 0.25rem;">
-            Welcome, <?php echo htmlspecialchars(explode(' ', $user['name'])[0]); ?>.
+            Selamat datang, <?php echo htmlspecialchars(explode(' ', $user['name'])[0]); ?>.
           </h1>
           <p style="color: #a5b4fc; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
             &#128231; <?php echo htmlspecialchars($user['email']); ?>
@@ -46,7 +46,7 @@ $past     = array_filter($bookings, fn($b) => $b['status'] === 'COMPLETED' || $b
       </div>
       <div>
         <a href="fleet.php" class="btn btn-primary" style="padding: 0.85rem 2rem; font-size: 0.95rem; box-shadow: 0 10px 30px rgba(99,102,241,0.3); border-radius: 12px;">
-          + New Booking
+          + Pesan Sekarang
         </a>
       </div>
     </div>
@@ -58,19 +58,19 @@ $past     = array_filter($bookings, fn($b) => $b['status'] === 'COMPLETED' || $b
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
       <div style="background: rgba(24,24,31,0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
         <p style="color: var(--muted); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--muted);"></span> Total Bookings
+          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--muted);"></span> Total Pemesanan
         </p>
         <p style="font-size: 3rem; font-weight: 900; color: white; line-height: 1;"><?php echo count($bookings); ?></p>
       </div>
       <div style="background: rgba(24,24,31,0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
         <p style="color: var(--muted); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);"></span> Active Rentals
+          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);"></span> Rental Aktif
         </p>
         <p style="font-size: 3rem; font-weight: 900; color: white; line-height: 1;"><?php echo count($active); ?></p>
       </div>
       <div style="background: rgba(24,24,31,0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
         <p style="color: var(--muted); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--primary-light);"></span> Total Spent
+          <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--primary-light);"></span> Total Pengeluaran
         </p>
         <p style="font-size: 3rem; font-weight: 900; background: linear-gradient(135deg, #818cf8, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1;">
           $<?php echo number_format(array_sum(array_column($bookings, 'totalPrice'))); ?>
@@ -80,15 +80,15 @@ $past     = array_filter($bookings, fn($b) => $b['status'] === 'COMPLETED' || $b
 
     <!-- Booking History -->
     <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem;">
-      <h2 style="font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px;">Your Reservations</h2>
+      <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 1.5rem;">Riwayat Pemesanan</h2>
     </div>
 
     <?php if (count($bookings) === 0): ?>
       <div style="background: rgba(24,24,31,0.5); border: 1px dashed rgba(255,255,255,0.15); border-radius: 24px; padding: 6rem 2rem; text-align: center;">
         <div style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.5;">&#128663;</div>
-        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;">No Reservations Yet</h3>
-        <p style="color: var(--muted); margin-bottom: 2rem;">Ready to experience the drive of a lifetime?</p>
-        <a href="fleet.php" class="btn btn-primary" style="padding: 0.9rem 2.5rem; font-size: 1rem; border-radius: 14px;">Browse the Fleet</a>
+        <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;">Belum Ada Pemesanan</h3>
+        <p style="color: var(--muted); margin-bottom: 2rem;">Siap merasakan pengalaman berkendara terbaik?</p>
+        <a href="fleet.php" class="btn btn-primary" style="padding: 0.9rem 2.5rem; font-size: 1rem; border-radius: 14px;">Lihat Armada</a>
       </div>
     <?php else: ?>
       <div style="display: flex; flex-direction: column; gap: 1.25rem;">
@@ -129,7 +129,7 @@ $past     = array_filter($bookings, fn($b) => $b['status'] === 'COMPLETED' || $b
                 <?php endif; ?>
                 <?php if($isActive): ?>
                   <div style="position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); padding: 0.2rem 0.5rem; border-radius: 6px; font-size: 0.65rem; font-weight: 700; color: white; border: 1px solid rgba(255,255,255,0.1);">
-                    UPCOMING
+                    MENDATANG
                   </div>
                 <?php endif; ?>
               </div>
@@ -143,9 +143,9 @@ $past     = array_filter($bookings, fn($b) => $b['status'] === 'COMPLETED' || $b
                   <?php echo htmlspecialchars($b['brand'].' '.$b['model']); ?>
                 </h4>
                 <div style="display: flex; align-items: center; gap: 1rem; color: var(--muted); font-size: 0.9rem;">
-                  <span style="display: flex; align-items: center; gap: 0.4rem;">
-                    &#128197; <?php echo date('M d, Y', strtotime($b['pickupDate'])); ?> &rarr; <?php echo date('M d, Y', strtotime($b['returnDate'])); ?>
-                  </span>
+                  <p style="color: var(--muted); font-size: 0.85rem;">
+                    &#128197; <?php echo date('d M Y', strtotime($b['pickupDate'])); ?> &rarr; <?php echo date('d M Y', strtotime($b['returnDate'])); ?>
+                  </p>
                   <span style="display: flex; align-items: center; gap: 0.4rem;">
                     &#128205; <?php echo htmlspecialchars($b['pickupLocation']); ?>
                   </span>
