@@ -36,7 +36,20 @@ require_once __DIR__ . '/../includes/header.php';
     <p class="auth-subtitle">Masuk untuk mengelola pemesanan Anda</p>
 
     <?php if ($error): ?>
-      <div class="error-msg">&#10007; <?php echo htmlspecialchars($error); ?></div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          if (window.Swal) {
+            Swal.fire({
+              icon: 'error',
+              title: 'Gagal Masuk',
+              text: '<?php echo addslashes($error); ?>',
+              background: '#1e1e2d',
+              color: '#ffffff',
+              confirmButtonColor: '#6366f1'
+            });
+          }
+        });
+      </script>
     <?php endif; ?>
 
     <form method="POST" action="/auth/login.php">

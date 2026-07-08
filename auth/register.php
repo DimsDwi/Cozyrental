@@ -51,10 +51,41 @@ require_once __DIR__ . '/../includes/header.php';
     <p class="auth-subtitle">Bergabung dengan ribuan pengemudi. Gratis.</p>
 
     <?php if ($error): ?>
-      <div class="error-msg">&#10007; <?php echo htmlspecialchars($error); ?></div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          if (window.Swal) {
+            Swal.fire({
+              icon: 'error',
+              title: 'Pendaftaran Gagal',
+              text: '<?php echo addslashes($error); ?>',
+              background: '#1e1e2d',
+              color: '#ffffff',
+              confirmButtonColor: '#6366f1'
+            });
+          }
+        });
+      </script>
     <?php endif; ?>
     <?php if ($success): ?>
-      <div class="success-msg">&#10003; <?php echo htmlspecialchars($success); ?> <a href="/auth/login.php" style="color:var(--success);font-weight:600;">Login &#8594;</a></div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          if (window.Swal) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Pendaftaran Berhasil!',
+              text: '<?php echo addslashes($success); ?>',
+              background: '#1e1e2d',
+              color: '#ffffff',
+              confirmButtonColor: '#6366f1',
+              confirmButtonText: 'Login Sekarang'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                window.location.href = '/auth/login.php';
+              }
+            });
+          }
+        });
+      </script>
     <?php endif; ?>
 
     <form method="POST" action="/auth/register.php">

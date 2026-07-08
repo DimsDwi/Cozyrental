@@ -13,5 +13,6 @@
     <p>&copy; <?php echo date("Y"); ?> Cozy Car Rental. Hak Cipta Dilindungi.</p>
   </footer>
 
+  <script src="/dist/main.js"></script>
 </body>
 </html>

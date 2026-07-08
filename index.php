@@ -38,7 +38,7 @@ $cars = $stmt->fetchAll();
 </section>
 
 <!-- ── STATS BAR ── -->
-<div class="stats-bar">
+<div class="stats-bar" data-aos="fade-up" data-aos-delay="200">
   <div class="stat-item">
     <div class="stat-num">50+</div>
     <div class="stat-label">Kendaraan Premium</div>
@@ -64,12 +64,13 @@ $cars = $stmt->fetchAll();
   <p class="section-sub">Dipilih dengan cermat, dibersihkan, dan siap dikendarai — pilih dari model paling diminati kami.</p>
 
   <div class="grid">
-    <?php foreach($cars as $car): ?>
+    <?php foreach($cars as $index => $car): ?>
       <?php 
         $images = json_decode($car['images'], true);
         $imgUrl = is_array($images) && count($images) > 0 ? $images[0] : '';
+        $delay = $index * 100;
       ?>
-      <div class="car-card">
+      <div class="car-card" data-aos="fade-up" data-aos-delay="<?php echo $delay; ?>">
         <div class="car-card-img-wrap">
           <?php if($imgUrl): ?>
             <img src="<?php echo htmlspecialchars($imgUrl); ?>"
@@ -113,32 +114,32 @@ $cars = $stmt->fetchAll();
   <p class="section-sub">Kami menghapus setiap hambatan dalam pengalaman rental tradisional.</p>
 
   <div class="features-grid">
-    <div class="feature-card">
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
       <div class="feature-icon">&#9889;</div>
       <h4>Akses Instan</h4>
       <p>Pesan dalam 3 menit. Kunci digital langsung dikirim ke ponsel Anda. Tanpa antrean, tanpa dokumen.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
       <div class="feature-icon">&#128737;</div>
       <h4>Sudah Ter-asuransi</h4>
       <p>Setiap penyewaan sudah termasuk ganti rugi kerusakan dan asuransi pihak ketiga. Berkendara dengan tenang.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
       <div class="feature-icon">&#128584;</div>
       <h4>Armada Pilihan</h4>
       <p>Setiap mobil dipilih dengan teliti, didetail secara profesional, dan diinspeksi keamanannya sebelum penyewaan.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
       <div class="feature-icon">&#127760;</div>
       <h4>Tersedia 24 / 7</h4>
       <p>Tim concierge kami siap membantu kapan saja selama masa sewa Anda.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
       <div class="feature-icon">&#128267;</div>
       <h4>Pilihan Ramah Lingkungan</h4>
       <p>Armada kendaraan listrik premium yang terus berkembang untuk pengemudi berjiwa lingkungan yang tidak mau berkompromi.</p>
     </div>
-    <div class="feature-card">
+    <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
       <div class="feature-icon">&#128176;</div>
       <h4>Harga Transparan</h4>
       <p>Tidak ada biaya tersembunyi, tidak ada kejutan. Harga yang Anda lihat adalah yang Anda bayar.</p>
