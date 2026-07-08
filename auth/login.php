@@ -1,5 +1,5 @@
 <?php 
-require_once 'db.php'; 
+require_once __DIR__ . '/../includes/db.php'; 
 
 $error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id']   = $user['id'];
             $_SESSION['user_name'] = $user['name'];
             $_SESSION['user_role'] = $user['role'];
-            $redirect = $_GET['redirect'] ?? 'dashboard.php';
+            $redirect = $_GET['redirect'] ?? '/user/dashboard.php';
             header("Location: " . $redirect);
             exit;
         } else {
@@ -23,14 +23,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-require_once 'header.php'; 
+require_once __DIR__ . '/../includes/header.php'; 
 ?>
 
 <main style="min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 3rem 2rem;">
   <div class="auth-container" style="margin: 0;">
     <!-- Logo -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <a href="index.php" class="logo" style="font-size: 1.6rem;">Cozy<span>Rental</span></a>
+      <a href="/index.php" class="logo" style="font-size: 1.6rem;">Cozy<span>Rental</span></a>
     </div>
     <h2>Selamat Datang Kembali</h2>
     <p class="auth-subtitle">Masuk untuk mengelola pemesanan Anda</p>
@@ -39,7 +39,7 @@ require_once 'header.php';
       <div class="error-msg">&#10007; <?php echo htmlspecialchars($error); ?></div>
     <?php endif; ?>
 
-    <form method="POST" action="login.php">
+    <form method="POST" action="/auth/login.php">
       <div class="form-group">
         <label for="email">Alamat Email</label>
         <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email">
@@ -56,9 +56,9 @@ require_once 'header.php';
     <hr class="divider">
 
     <p style="text-align:center;font-size:0.875rem;color:var(--muted);">
-      Belum punya akun? <a href="register.php" style="color:var(--primary-light);font-weight:600;">Daftar gratis</a>
+      Belum punya akun? <a href="/auth/register.php" style="color:var(--primary-light);font-weight:600;">Daftar gratis</a>
     </p>
   </div>
 </main>
 
-<?php require_once 'footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>

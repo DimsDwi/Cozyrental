@@ -1,4 +1,4 @@
-<?php require_once 'header.php'; ?>
+<?php require_once __DIR__ . '/../includes/header.php'; ?>
 
 <main>
   <!-- Hero -->
@@ -62,8 +62,8 @@
   <div class="cta-section" style="margin-bottom: 0;">
     <h2>Ready to Experience It?</h2>
     <p>Join thousands of drivers who've made the switch to premium, effortless car rental.</p>
-    <a href="fleet.php" class="btn btn-primary" style="font-size: 1rem; padding: 0.9rem 2.2rem;">Browse the Fleet</a>
+    <a href="/pages/fleet.php" class="btn btn-primary" style="font-size: 1rem; padding: 0.9rem 2.2rem;">Browse the Fleet</a>
   </div>
 </main>
 
-<?php require_once 'footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>

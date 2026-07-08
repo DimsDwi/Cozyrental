@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sent = true;
     }
 }
-require_once 'header.php';
+require_once __DIR__ . '/../includes/header.php';
 ?>
 
 <main>
@@ -60,7 +60,7 @@ require_once 'header.php';
         <?php if ($error): ?>
           <div class="error-msg"><?php echo htmlspecialchars($error); ?></div>
         <?php endif; ?>
-        <form method="POST" action="contact.php">
+        <form method="POST" action="/pages/contact.php">
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div class="form-group">
               <label>First Name</label>
@@ -94,4 +94,4 @@ require_once 'header.php';
   </section>
 </main>
 
-<?php require_once 'footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>

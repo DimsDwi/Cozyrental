@@ -22,7 +22,7 @@ function requireLogin() {
     if (!isLoggedIn()) {
         // Works from any subfolder
         $base = rtrim(dirname($_SERVER['PHP_SELF']), '/admin');
-        header("Location: /login.php");
+        header("Location: /auth/login.php");
         exit;
     }
 }
@@ -30,7 +30,7 @@ function requireLogin() {
 // RBAC Middleware
 function requireAdmin() {
     if (!isLoggedIn()) {
-        header("Location: /login.php");
+        header("Location: /auth/login.php");
         exit;
     }
     if ($_SESSION['user_role'] !== 'ADMIN' && $_SESSION['user_role'] !== 'SUPER_ADMIN') {

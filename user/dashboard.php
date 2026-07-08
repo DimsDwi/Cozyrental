@@ -1,7 +1,7 @@
 <?php 
-require_once 'db.php'; 
+require_once __DIR__ . '/../includes/db.php'; 
 requireLogin();
-require_once 'header.php'; 
+require_once __DIR__ . '/../includes/header.php'; 
 
 // Fetch user info
 $uStmt = $pdo->prepare("SELECT * FROM User WHERE id = ?");
@@ -45,7 +45,7 @@ $past     = array_filter($bookings, fn($b) => $b['status'] === 'COMPLETED' || $b
         </div>
       </div>
       <div>
-        <a href="fleet.php" class="btn btn-primary" style="padding: 0.85rem 2rem; font-size: 0.95rem; box-shadow: 0 10px 30px rgba(99,102,241,0.3); border-radius: 12px;">
+        <a href="/pages/fleet.php" class="btn btn-primary" style="padding: 0.85rem 2rem; font-size: 0.95rem; box-shadow: 0 10px 30px rgba(99,102,241,0.3); border-radius: 12px;">
           + Pesan Sekarang
         </a>
       </div>
@@ -88,7 +88,7 @@ $past     = array_filter($bookings, fn($b) => $b['status'] === 'COMPLETED' || $b
         <div style="font-size: 4rem; margin-bottom: 1rem; opacity: 0.5;">&#128663;</div>
         <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 700;">Belum Ada Pemesanan</h3>
         <p style="color: var(--muted); margin-bottom: 2rem;">Siap merasakan pengalaman berkendara terbaik?</p>
-        <a href="fleet.php" class="btn btn-primary" style="padding: 0.9rem 2.5rem; font-size: 1rem; border-radius: 14px;">Lihat Armada</a>
+        <a href="/pages/fleet.php" class="btn btn-primary" style="padding: 0.9rem 2.5rem; font-size: 1rem; border-radius: 14px;">Lihat Armada</a>
       </div>
     <?php else: ?>
       <div style="display: flex; flex-direction: column; gap: 1.25rem;">
@@ -180,4 +180,4 @@ $past     = array_filter($bookings, fn($b) => $b['status'] === 'COMPLETED' || $b
   </div>
 </div>
 
-<?php require_once 'footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>

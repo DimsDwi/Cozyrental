@@ -132,7 +132,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <aside class="admin-sidebar">
     <a href="../index.php" class="admin-logo">Cozy<span>Admin</span></a>
     <nav class="admin-nav">
-        <a href="index.php" class="<?php echo $current_page == 'index.php' ? 'active' : ''; ?>">&#128202; Dashboard</a>
+        <a href="/index.php" class="<?php echo $current_page == 'index.php' ? 'active' : ''; ?>">&#128202; Dashboard</a>
         <a href="bookings.php" class="<?php echo $current_page == 'bookings.php' ? 'active' : ''; ?>">&#128197; Bookings</a>
         <a href="cars.php" class="<?php echo $current_page == 'cars.php' ? 'active' : ''; ?>">&#128663; Fleet</a>
         <a href="users.php" class="<?php echo $current_page == 'users.php' ? 'active' : ''; ?>">&#128101; Customers</a>

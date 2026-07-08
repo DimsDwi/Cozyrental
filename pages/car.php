@@ -1,10 +1,10 @@
 <?php 
-require_once 'header.php'; 
+require_once __DIR__ . '/../includes/header.php'; 
 
 $id = $_GET['id'] ?? null;
 if (!$id) {
     echo "<main class='container'><h2>Car not found</h2></main>";
-    require_once 'footer.php';
+    require_once __DIR__ . '/../includes/footer.php';
     exit;
 }
 
@@ -14,7 +14,7 @@ $car = $stmt->fetch();
 
 if (!$car) {
     echo "<main class='container'><h2>Car not found</h2></main>";
-    require_once 'footer.php';
+    require_once __DIR__ . '/../includes/footer.php';
     exit;
 }
 
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book'])) {
 
 <main class="container">
   <?php if ($bookingSuccess): ?>
-    <div class="success-msg" style="margin-bottom: 2rem;">✓ Pemesanan berhasil dikirim! <a href="dashboard.php" style="color:var(--primary)">Lihat di Dashboard</a></div>
+    <div class="success-msg" style="margin-bottom: 2rem;">✓ Pemesanan berhasil dikirim! <a href="/user/dashboard.php" style="color:var(--primary)">Lihat di Dashboard</a></div>
   <?php endif; ?>
   <?php if ($bookingError): ?>
     <div class="error-msg" style="margin-bottom: 2rem;"><?php echo htmlspecialchars($bookingError); ?></div>
@@ -111,11 +111,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book'])) {
           </form>
         <?php else: ?>
           <p style="margin-top: 1rem; color: var(--text-muted);">Silakan login untuk memesan kendaraan ini.</p>
-          <a href="login.php" class="btn-primary" style="margin-top: 1rem; display: inline-block;">Login untuk Memesan</a>
+          <a href="/auth/login.php" class="btn-primary" style="margin-top: 1rem; display: inline-block;">Login untuk Memesan</a>
         <?php endif; ?>
       </div>
     </div>
   </div>
 </main>
 
-<?php require_once 'footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>

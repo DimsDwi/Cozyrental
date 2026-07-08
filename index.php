@@ -1,5 +1,5 @@
 <?php 
-require_once 'header.php'; 
+require_once __DIR__ . '/includes/header.php'; 
 
 // Fetch 6 top cars
 $stmt = $pdo->query("SELECT * FROM Car ORDER BY pricePerDay DESC LIMIT 6");
@@ -23,10 +23,10 @@ $cars = $stmt->fetchAll();
   </p>
 
   <div class="hero-actions">
-    <a href="fleet.php" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2rem;">
+    <a href="/pages/fleet.php" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2rem;">
       &#9654;&nbsp; Lihat Armada
     </a>
-    <a href="register.php" class="btn btn-ghost" style="font-size:1rem;padding:0.85rem 2rem;">
+    <a href="/auth/register.php" class="btn btn-ghost" style="font-size:1rem;padding:0.85rem 2rem;">
       Daftar Gratis
     </a>
   </div>
@@ -92,7 +92,7 @@ $cars = $stmt->fetchAll();
               $<?php echo htmlspecialchars($car['pricePerDay']); ?>
               <span>/ hari</span>
             </div>
-            <a href="car.php?id=<?php echo urlencode($car['id']); ?>" class="btn btn-primary" style="padding:0.5rem 1.1rem;font-size:0.85rem;">Pesan</a>
+            <a href="/pages/car.php?id=<?php echo urlencode($car['id']); ?>" class="btn btn-primary" style="padding:0.5rem 1.1rem;font-size:0.85rem;">Pesan</a>
           </div>
         </div>
       </div>
@@ -100,7 +100,7 @@ $cars = $stmt->fetchAll();
   </div>
 
   <div style="text-align:center;margin-top:3rem;">
-    <a href="fleet.php" class="btn btn-outline" style="font-size:1rem;padding:0.8rem 2rem;">
+    <a href="/pages/fleet.php" class="btn btn-outline" style="font-size:1rem;padding:0.8rem 2rem;">
       Lihat Semua Kendaraan &rarr;
     </a>
   </div>
@@ -230,10 +230,10 @@ $cars = $stmt->fetchAll();
       </p>
 
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="fleet.php" style="display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;font-weight:700;font-size:1rem;padding:1rem 2.4rem;border-radius:12px;box-shadow:0 8px 32px rgba(99,102,241,0.5);text-decoration:none;transition:all 0.2s;border:1px solid rgba(255,255,255,0.15);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(99,102,241,0.7)';" onmouseout="this.style.transform='';this.style.boxShadow='0 8px 32px rgba(99,102,241,0.5);'">
+        <a href="/pages/fleet.php" style="display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;font-weight:700;font-size:1rem;padding:1rem 2.4rem;border-radius:12px;box-shadow:0 8px 32px rgba(99,102,241,0.5);text-decoration:none;transition:all 0.2s;border:1px solid rgba(255,255,255,0.15);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(99,102,241,0.7)';" onmouseout="this.style.transform='';this.style.boxShadow='0 8px 32px rgba(99,102,241,0.5);'">
           &#128663; Lihat Armada
         </a>
-        <a href="register.php" style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.1);color:white;font-weight:700;font-size:1rem;padding:1rem 2.4rem;border-radius:12px;backdrop-filter:blur(10px);text-decoration:none;transition:all 0.2s;border:1px solid rgba(255,255,255,0.25);" onmouseover="this.style.background='rgba(255,255,255,0.18)';this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.transform='';">
+        <a href="/auth/register.php" style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.1);color:white;font-weight:700;font-size:1rem;padding:1rem 2.4rem;border-radius:12px;backdrop-filter:blur(10px);text-decoration:none;transition:all 0.2s;border:1px solid rgba(255,255,255,0.25);" onmouseover="this.style.background='rgba(255,255,255,0.18)';this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.transform='';">
           Daftar Gratis &#8594;
         </a>
       </div>
@@ -249,4 +249,4 @@ $cars = $stmt->fetchAll();
   </div>
 </div>
 
-<?php require_once 'footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>

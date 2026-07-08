@@ -1,5 +1,5 @@
 <?php 
-require_once 'db.php'; 
+require_once __DIR__ . '/../includes/db.php'; 
 
 $error = '';
 $success = '';
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['user_id']   = $id;
                 $_SESSION['user_name'] = $name;
                 $_SESSION['user_role'] = 'CUSTOMER';
-                header("Location: dashboard.php");
+                header("Location: /user/dashboard.php");
                 exit;
             } catch (Exception $e) {
                 $error = 'Failed to create account. Please try again.';
@@ -38,14 +38,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-require_once 'header.php'; 
+require_once __DIR__ . '/../includes/header.php'; 
 ?>
 
 <main style="min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 3rem 2rem;">
   <div class="auth-container" style="margin: 0; max-width: 460px;">
     <!-- Logo -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <a href="index.php" class="logo" style="font-size: 1.6rem;">Cozy<span>Rental</span></a>
+      <a href="/index.php" class="logo" style="font-size: 1.6rem;">Cozy<span>Rental</span></a>
     </div>
     <h2>Buat Akun</h2>
     <p class="auth-subtitle">Bergabung dengan ribuan pengemudi. Gratis.</p>
@@ -54,10 +54,10 @@ require_once 'header.php';
       <div class="error-msg">&#10007; <?php echo htmlspecialchars($error); ?></div>
     <?php endif; ?>
     <?php if ($success): ?>
-      <div class="success-msg">&#10003; <?php echo htmlspecialchars($success); ?> <a href="login.php" style="color:var(--success);font-weight:600;">Login &#8594;</a></div>
+      <div class="success-msg">&#10003; <?php echo htmlspecialchars($success); ?> <a href="/auth/login.php" style="color:var(--success);font-weight:600;">Login &#8594;</a></div>
     <?php endif; ?>
 
-    <form method="POST" action="register.php">
+    <form method="POST" action="/auth/register.php">
       <div class="form-group">
         <label for="name">Nama Lengkap</label>
         <input type="text" id="name" name="name" placeholder="Budi Santoso" required autocomplete="name">
@@ -77,9 +77,9 @@ require_once 'header.php';
 
     <hr class="divider">
     <p style="text-align:center;font-size:0.875rem;color:var(--muted);">
-      Sudah punya akun? <a href="login.php" style="color:var(--primary-light);font-weight:600;">Masuk</a>
+      Sudah punya akun? <a href="/auth/login.php" style="color:var(--primary-light);font-weight:600;">Masuk</a>
     </p>
   </div>
 </main>
 
-<?php require_once 'footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>

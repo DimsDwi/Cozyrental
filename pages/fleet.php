@@ -1,5 +1,5 @@
 <?php 
-require_once 'header.php'; 
+require_once __DIR__ . '/../includes/header.php'; 
 
 // Get filter params
 $category  = $_GET['category'] ?? '';
@@ -40,7 +40,7 @@ $cats = $pdo->query("SELECT DISTINCT category FROM Car ORDER BY category")->fetc
 
   <!-- Filters -->
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem 2rem;">
-    <form method="GET" action="fleet.php" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+    <form method="GET" action="/pages/fleet.php" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
       <!-- Search -->
       <div style="flex: 1; min-width: 220px; position: relative;">
         <span style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--muted);">&#128269;</span>
@@ -60,19 +60,19 @@ $cats = $pdo->query("SELECT DISTINCT category FROM Car ORDER BY category")->fetc
 
       <button type="submit" class="btn btn-primary" style="padding: 0.7rem 1.5rem;">Cari</button>
       <?php if($search || $category): ?>
-        <a href="fleet.php" class="btn btn-ghost" style="padding: 0.7rem 1.2rem;">&#215; Hapus Filter</a>
+        <a href="/pages/fleet.php" class="btn btn-ghost" style="padding: 0.7rem 1.2rem;">&#215; Hapus Filter</a>
       <?php endif; ?>
     </form>
 
     <!-- Category Pills -->
     <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.25rem;">
-      <a href="fleet.php?sort=<?php echo $sort; ?>"
+      <a href="/pages/fleet.php?sort=<?php echo $sort; ?>"
         style="padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; border: 1px solid var(--border2); text-decoration: none; transition: all 0.2s;
           <?php echo !$category ? 'background:var(--primary);color:white;border-color:var(--primary);' : 'background:var(--surface);color:var(--muted);'; ?>">
         All
       </a>
       <?php foreach($cats as $cat): ?>
-        <a href="fleet.php?category=<?php echo urlencode($cat); ?>&sort=<?php echo $sort; ?>"
+        <a href="/pages/fleet.php?category=<?php echo urlencode($cat); ?>&sort=<?php echo $sort; ?>"
           style="padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; border: 1px solid var(--border2); text-decoration: none; transition: all 0.2s;
             <?php echo $category===$cat ? 'background:var(--primary);color:white;border-color:var(--primary);' : 'background:var(--surface);color:var(--muted);'; ?>">
           <?php echo htmlspecialchars($cat); ?>
@@ -87,7 +87,7 @@ $cats = $pdo->query("SELECT DISTINCT category FROM Car ORDER BY category")->fetc
       <div class="empty-state">
         <p style="font-size: 3rem; margin-bottom: 1rem;">&#128663;</p>
         <p>Tidak ada kendaraan yang sesuai pencarian Anda.</p>
-        <a href="fleet.php" class="btn btn-primary">Hapus Filter</a>
+        <a href="/pages/fleet.php" class="btn btn-primary">Hapus Filter</a>
       </div>
     <?php else: ?>
     <div class="grid">
@@ -117,7 +117,7 @@ $cats = $pdo->query("SELECT DISTINCT category FROM Car ORDER BY category")->fetc
             </p>
             <div class="car-price-row">
               <div class="car-price">$<?php echo htmlspecialchars($car['pricePerDay']); ?><span> / hari</span></div>
-              <a href="car.php?id=<?php echo urlencode($car['id']); ?>" class="btn btn-primary" style="padding:0.5rem 1.1rem;font-size:0.85rem;">Pesan</a>
+              <a href="/pages/car.php?id=<?php echo urlencode($car['id']); ?>" class="btn btn-primary" style="padding:0.5rem 1.1rem;font-size:0.85rem;">Pesan</a>
             </div>
           </div>
         </div>
@@ -127,4 +127,4 @@ $cats = $pdo->query("SELECT DISTINCT category FROM Car ORDER BY category")->fetc
   </div>
 </main>
 
-<?php require_once 'footer.php'; ?>
+<?php require_once __DIR__ . '/../includes/footer.php'; ?>
