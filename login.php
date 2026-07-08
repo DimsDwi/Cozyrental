@@ -1,0 +1,64 @@
+<?php 
+require_once 'db.php'; 
+
+$error = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email    = trim($_POST['email'] ?? '');
+    $password = $_POST['password'] ?? '';
+    if (empty($email) || empty($password)) {
+        $error = 'Please fill in all fields.';
+    } else {
+        $stmt = $pdo->prepare("SELECT * FROM User WHERE email = ?");
+        $stmt->execute([$email]);
+        $user = $stmt->fetch();
+        if ($user && password_verify($password, $user['password'])) {
+            $_SESSION['user_id']   = $user['id'];
+            $_SESSION['user_name'] = $user['name'];
+            $_SESSION['user_role'] = $user['role'];
+            $redirect = $_GET['redirect'] ?? 'dashboard.php';
+            header("Location: " . $redirect);
+            exit;
+        } else {
+            $error = 'Invalid email or password.';
+        }
+    }
+}
+require_once 'header.php'; 
+?>
+
+<main style="min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 3rem 2rem;">
+  <div class="auth-container" style="margin: 0;">
+    <!-- Logo -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <a href="index.php" class="logo" style="font-size: 1.6rem;">Cozy<span>Rental</span></a>
+    </div>
+    <h2>Welcome Back</h2>
+    <p class="auth-subtitle">Sign in to manage your bookings</p>
+
+    <?php if ($error): ?>
+      <div class="error-msg">&#10007; <?php echo htmlspecialchars($error); ?></div>
+    <?php endif; ?>
+
+    <form method="POST" action="login.php">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:0.85rem;margin-top:0.5rem;font-size:0.95rem;">
+        Sign In &#8594;
+      </button>
+    </form>
+
+    <hr class="divider">
+
+    <p style="text-align:center;font-size:0.875rem;color:var(--muted);">
+      Don't have an account? <a href="register.php" style="color:var(--primary-light);font-weight:600;">Create one free</a>
+    </p>
+  </div>
+</main>
+
+<?php require_once 'footer.php'; ?>
