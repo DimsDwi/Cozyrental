@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../db.php';
+require_once __DIR__ . '/../../includes/db.php';
 requireAdmin();
 
 $current_page = basename($_SERVER['PHP_SELF']);
@@ -11,7 +11,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cozy Admin Panel</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <style>
         :root {
             --sidebar-width: 280px;
@@ -130,15 +130,15 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <body>
 
 <aside class="admin-sidebar">
-    <a href="../index.php" class="admin-logo">Cozy<span>Admin</span></a>
+    <a href="/index.php" class="admin-logo">Cozy<span>Admin</span></a>
     <nav class="admin-nav">
-        <a href="/index.php" class="<?php echo $current_page == 'index.php' ? 'active' : ''; ?>">&#128202; Dashboard</a>
+        <a href="index.php" class="<?php echo $current_page == 'index.php' ? 'active' : ''; ?>">&#128202; Dashboard</a>
         <a href="bookings.php" class="<?php echo $current_page == 'bookings.php' ? 'active' : ''; ?>">&#128197; Bookings</a>
         <a href="cars.php" class="<?php echo $current_page == 'cars.php' ? 'active' : ''; ?>">&#128663; Fleet</a>
         <a href="users.php" class="<?php echo $current_page == 'users.php' ? 'active' : ''; ?>">&#128101; Customers</a>
     </nav>
     <div style="padding: 2rem;">
-        <a href="../logout.php" class="btn btn-ghost" style="width: 100%; text-align: center; color: #ef4444;">&#128682; Logout</a>
+        <a href="/auth/logout.php" class="btn btn-ghost" style="width: 100%; text-align: center; color: #ef4444;">&#128682; Logout</a>
     </div>
 </aside>
 

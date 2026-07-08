@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/includes/header.php';
 
 // Handle Update Status
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'update_status') {
@@ -92,4 +92,4 @@ $bookings = $pdo->query("
     </tbody>
 </table>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>

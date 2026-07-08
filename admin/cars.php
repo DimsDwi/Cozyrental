@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/includes/header.php';
 
 // Handle Add Car
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'add') {
@@ -169,4 +169,4 @@ $cars = $pdo->query("SELECT * FROM Car ORDER BY brand ASC")->fetchAll();
     </div>
 </div>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>

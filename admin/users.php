@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/includes/header.php';
 
 // Handle Role Update
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'update_role') {
@@ -85,4 +85,4 @@ $users = $pdo->query("SELECT * FROM User ORDER BY createdAt DESC")->fetchAll();
     </tbody>
 </table>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/includes/header.php';
 
 // Analytics queries
 $totalRevenue = $pdo->query("SELECT SUM(totalPrice) FROM Booking WHERE status = 'COMPLETED' OR status = 'ACTIVE'")->fetchColumn() ?: 0;
@@ -83,4 +83,4 @@ $recentBookings = $pdo->query("
     </tbody>
 </table>
 
-<?php require_once __DIR__ . '/../includes/footer.php'; ?>
+<?php require_once __DIR__ . '/includes/footer.php'; ?>
