@@ -13,6 +13,10 @@
 </head>
 <body>
 
+<!-- Custom Cursor -->
+<div class="cursor-dot"></div>
+<div class="cursor-outline"></div>
+
 <header>
   <a href="/index.php" class="logo">Cozy<span>Rental</span></a>
   <nav>

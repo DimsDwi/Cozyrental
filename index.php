@@ -59,6 +59,22 @@ $cars = $stmt->fetchAll();
   </div>
 </div>
 
+<!-- ── MARQUEE ── -->
+<div class="marquee-container">
+  <div class="marquee-content">
+    <span>LUXURY</span><span>&bull;</span>
+    <span>ELECTRIC</span><span>&bull;</span>
+    <span>SPORTS</span><span>&bull;</span>
+    <span>PREMIUM</span><span>&bull;</span>
+    <span>CHAUFFEUR</span><span>&bull;</span>
+    <span>LUXURY</span><span>&bull;</span>
+    <span>ELECTRIC</span><span>&bull;</span>
+    <span>SPORTS</span><span>&bull;</span>
+    <span>PREMIUM</span><span>&bull;</span>
+    <span>CHAUFFEUR</span>
+  </div>
+</div>
+
 <!-- ── FEATURED FLEET ── -->
 <section class="section">
   <div class="section-label">Our Fleet</div>
