@@ -38,22 +38,24 @@ $cars = $stmt->fetchAll();
 </section>
 
 <!-- ── STATS BAR ── -->
-<div class="stats-bar" data-aos="fade-up" data-aos-delay="200">
-  <div class="stat-item">
-    <div class="stat-num">50+</div>
-    <div class="stat-label">Kendaraan Premium</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">98%</div>
-    <div class="stat-label">Kepuasan Pelanggan</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">3 menit</div>
-    <div class="stat-label">Rata-rata Waktu Booking</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">24/7</div>
-    <div class="stat-label">Dukungan Pelanggan</div>
+<div class="stats-container" data-aos="fade-up" data-aos-delay="200">
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">50+</div>
+      <div class="stat-label">Kendaraan Premium</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">98%</div>
+      <div class="stat-label">Kepuasan Pelanggan</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3 menit</div>
+      <div class="stat-label">Rata-rata Waktu Booking</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Dukungan Pelanggan</div>
+    </div>
   </div>
 </div>
 
