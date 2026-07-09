@@ -10,29 +10,29 @@ $cars = $stmt->fetchAll();
 <section class="hero">
   <div class="hero-badge">
     <span class="dot"></span>
-    Kini tersedia 50+ kendaraan mewah &amp; elektrik
+    Now available: 50+ premium & electric vehicles
   </div>
 
   <h1>
-    Kendarai Masa Depan.<br>
-    <span class="gradient-text">Rasakan Kemewahan.</span>
+    Drive the Future.<br>
+    <span class="gradient-text">Experience Luxury.</span>
   </h1>
 
   <p>
-    Dari sedan elektrik elegan hingga supercar bertenaga tinggi — pesan kendaraan impian Anda dalam 3 menit. Tanpa dokumen, kunci langsung di genggaman.
+    From elegant electric sedans to high-performance supercars — book your dream ride in 3 minutes. Zero paperwork, instant digital access.
   </p>
 
   <div class="hero-actions">
     <a href="/pages/fleet.php" class="btn btn-primary" style="font-size:1rem;padding:0.85rem 2rem;">
-      &#9654;&nbsp; Lihat Armada
+      &#9654;&nbsp; Explore Fleet
     </a>
     <a href="/auth/register.php" class="btn btn-ghost" style="font-size:1rem;padding:0.85rem 2rem;">
-      Daftar Gratis
+      Join for Free
     </a>
   </div>
 
   <div class="hero-scroll-hint">
-    <span>Gulir</span>
+    <span>Scroll</span>
     <div class="scroll-line"></div>
   </div>
 </section>
@@ -42,28 +42,28 @@ $cars = $stmt->fetchAll();
   <div class="stats-bar">
     <div class="stat-item">
       <div class="stat-num">50+</div>
-      <div class="stat-label">Kendaraan Premium</div>
+      <div class="stat-label">Premium Vehicles</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">98%</div>
-      <div class="stat-label">Kepuasan Pelanggan</div>
+      <div class="stat-label">Client Satisfaction</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">3 menit</div>
-      <div class="stat-label">Rata-rata Waktu Booking</div>
+      <div class="stat-num">3 mins</div>
+      <div class="stat-label">Average Booking Time</div>
     </div>
     <div class="stat-item">
       <div class="stat-num">24/7</div>
-      <div class="stat-label">Dukungan Pelanggan</div>
+      <div class="stat-label">Concierge Support</div>
     </div>
   </div>
 </div>
 
 <!-- ── FEATURED FLEET ── -->
 <section class="section">
-  <div class="section-label">Armada Kami</div>
-  <h2>Pilihan Terbaik Minggu Ini</h2>
-  <p class="section-sub">Dipilih dengan cermat, dibersihkan, dan siap dikendarai — pilih dari model paling diminati kami.</p>
+  <div class="section-label">Our Fleet</div>
+  <h2>This Week's Top Picks</h2>
+  <p class="section-sub">Hand-picked, professionally detailed, and ready to drive — choose from our most demanded models.</p>
 
   <div class="grid">
     <?php foreach($cars as $index => $car): ?>
@@ -87,15 +87,15 @@ $cars = $stmt->fetchAll();
           <h3 class="car-title"><?php echo htmlspecialchars($car['brand'] . ' ' . $car['model']); ?></h3>
           <p class="car-meta">
             <?php echo htmlspecialchars(ucfirst(strtolower($car['transmission']))); ?> &bull;
-            <?php echo htmlspecialchars($car['seats']); ?> Kursi &bull;
+            <?php echo htmlspecialchars($car['seats']); ?> Seats &bull;
             <?php echo htmlspecialchars($car['fuel']); ?>
           </p>
           <div class="car-price-row">
             <div class="car-price">
               $<?php echo htmlspecialchars($car['pricePerDay']); ?>
-              <span>/ hari</span>
+              <span>/ day</span>
             </div>
-            <a href="/pages/car.php?id=<?php echo urlencode($car['id']); ?>" class="btn btn-primary" style="padding:0.5rem 1.1rem;font-size:0.85rem;">Pesan</a>
+            <a href="/pages/car.php?id=<?php echo urlencode($car['id']); ?>" class="btn btn-primary" style="padding:0.5rem 1.1rem;font-size:0.85rem;">Reserve</a>
           </div>
         </div>
       </div>
@@ -104,72 +104,72 @@ $cars = $stmt->fetchAll();
 
   <div style="text-align:center;margin-top:3rem;">
     <a href="/pages/fleet.php" class="btn btn-outline" style="font-size:1rem;padding:0.8rem 2rem;">
-      Lihat Semua Kendaraan &rarr;
+      View All Vehicles &rarr;
     </a>
   </div>
 </section>
 
 <!-- ── WHY US ── -->
 <section class="section" id="why-us" style="padding-top:0;">
-  <div class="section-label">Mengapa Cozy Rental</div>
-  <h2>Dibuat untuk Orang yang Menghargai Waktu Mereka</h2>
-  <p class="section-sub">Kami menghapus setiap hambatan dalam pengalaman rental tradisional.</p>
+  <div class="section-label">Why Cozy Rental</div>
+  <h2>Built for Those Who Value Time</h2>
+  <p class="section-sub">We eliminated every friction in the traditional rental experience.</p>
 
   <div class="features-grid">
     <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
       <div class="feature-icon">&#9889;</div>
-      <h4>Akses Instan</h4>
-      <p>Pesan dalam 3 menit. Kunci digital langsung dikirim ke ponsel Anda. Tanpa antrean, tanpa dokumen.</p>
+      <h4>Instant Access</h4>
+      <p>Book in 3 minutes. Digital keys sent straight to your phone. Zero lines, zero paperwork.</p>
     </div>
     <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
       <div class="feature-icon">&#128737;</div>
-      <h4>Sudah Ter-asuransi</h4>
-      <p>Setiap penyewaan sudah termasuk ganti rugi kerusakan dan asuransi pihak ketiga. Berkendara dengan tenang.</p>
+      <h4>Fully Insured</h4>
+      <p>Every rental includes comprehensive damage coverage and third-party insurance. Drive with peace of mind.</p>
     </div>
     <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
       <div class="feature-icon">&#128584;</div>
-      <h4>Armada Pilihan</h4>
-      <p>Setiap mobil dipilih dengan teliti, didetail secara profesional, dan diinspeksi keamanannya sebelum penyewaan.</p>
+      <h4>Curated Fleet</h4>
+      <p>Every single vehicle is meticulously chosen, professionally detailed, and safety-inspected prior to rental.</p>
     </div>
     <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
       <div class="feature-icon">&#127760;</div>
-      <h4>Tersedia 24 / 7</h4>
-      <p>Tim concierge kami siap membantu kapan saja selama masa sewa Anda.</p>
+      <h4>24/7 Availability</h4>
+      <p>Our dedicated concierge team is ready to assist you at any time during your rental period.</p>
     </div>
     <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
       <div class="feature-icon">&#128267;</div>
-      <h4>Pilihan Ramah Lingkungan</h4>
-      <p>Armada kendaraan listrik premium yang terus berkembang untuk pengemudi berjiwa lingkungan yang tidak mau berkompromi.</p>
+      <h4>Eco-Friendly Options</h4>
+      <p>A growing fleet of premium electric vehicles for the eco-conscious driver who refuses to compromise.</p>
     </div>
     <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
       <div class="feature-icon">&#128176;</div>
-      <h4>Harga Transparan</h4>
-      <p>Tidak ada biaya tersembunyi, tidak ada kejutan. Harga yang Anda lihat adalah yang Anda bayar.</p>
+      <h4>Transparent Pricing</h4>
+      <p>No hidden fees, no surprises. The price you see is exactly the price you pay.</p>
     </div>
   </div>
 </section>
 
 <!-- ── TESTIMONIALS ── -->
 <section class="section" id="testimonials" style="padding-top:0;">
-  <div class="section-label">Ulasan</div>
-  <h2>Dicintai Pengemudi di Mana-mana</h2>
-  <p class="section-sub">Jangan hanya percaya kata kami — ini yang dikatakan pelanggan kami.</p>
+  <div class="section-label">Testimonials</div>
+  <h2>Loved by Drivers Everywhere</h2>
+  <p class="section-sub">Don't just take our word for it — here's what our clients have to say.</p>
 
   <div class="testimonials-grid">
     <div class="testimonial-card">
       <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p>"Pesan Tesla tengah malam untuk keesokan harinya. Kunci sudah di ponsel jam 9 pagi. Pengalaman yang benar-benar mulus — lebih baik dari rental mana pun yang pernah saya coba."</p>
+      <p>"Booked a Tesla at midnight for the next morning. Keys were on my phone by 9 AM. An absolutely seamless experience — better than any rental I've ever tried."</p>
       <div class="testimonial-author">
         <div class="avatar">A</div>
         <div>
           <div class="author-name">Alex T.</div>
-          <div class="author-sub">Pebisnis, Jakarta</div>
+          <div class="author-sub">Executive, Jakarta</div>
         </div>
       </div>
     </div>
     <div class="testimonial-card">
       <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p>"Saya menyewa Lamborghini untuk akhir pekan anniversary. Mobilnya sempurna dan prosesnya sangat cepat. Cozy Rental sudah dapat pelanggan seumur hidup!"</p>
+      <p>"I rented a Lamborghini for our anniversary weekend. The car was immaculate and the process was incredibly fast. Cozy Rental has earned a customer for life!"</p>
       <div class="testimonial-author">
         <div class="avatar">M</div>
         <div>
@@ -180,12 +180,12 @@ $cars = $stmt->fetchAll();
     </div>
     <div class="testimonial-card">
       <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p>"Pengalaman rental mewah terbaik yang pernah ada. Tidak ada biaya tersembunyi, kondisi mobil sangat bagus, dan tim dukungan merespons dalam 2 menit ketika saya punya pertanyaan."</p>
+      <p>"The best luxury rental experience ever. No hidden fees, the car condition was superb, and support responded within 2 minutes when I had a question."</p>
       <div class="testimonial-author">
         <div class="avatar">J</div>
         <div>
           <div class="author-name">James K.</div>
-          <div class="author-sub">Pengusaha, Surabaya</div>
+          <div class="author-sub">Entrepreneur, Surabaya</div>
         </div>
       </div>
     </div>
@@ -220,33 +220,33 @@ $cars = $stmt->fetchAll();
     <!-- Content -->
     <div style="position:relative;">
       <span style="display:inline-block;background:rgba(129,140,248,0.15);border:1px solid rgba(129,140,248,0.35);color:#a5b4fc;padding:0.35rem 1.1rem;border-radius:999px;font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.75rem;">
-        &#9889; Mulai Hari Ini &mdash; Gratis
+        &#9889; Start Today &mdash; Free
       </span>
 
       <h2 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:900;letter-spacing:-1.5px;margin-bottom:1rem;line-height:1.1;">
-        Siap Merasakan Pengalaman<br>
-        <span style="background:linear-gradient(135deg,#a5b4fc,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Berkendara Luar Biasa?</span>
+        Ready to Experience<br>
+        <span style="background:linear-gradient(135deg,#a5b4fc,#67e8f9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">The Ultimate Drive?</span>
       </h2>
 
       <p style="color:rgba(255,255,255,0.6);font-size:1.1rem;max-width:480px;margin:0 auto 2.75rem;line-height:1.7;">
-        Bergabunglah dengan ribuan pengemudi puas kami. Pesan mobil impian Anda sekarang &mdash; tanpa dokumen, kunci langsung di tangan.
+        Join thousands of satisfied drivers. Book your dream car now &mdash; zero paperwork, keys instantly in your hand.
       </p>
 
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
         <a href="/pages/fleet.php" style="display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;font-weight:700;font-size:1rem;padding:1rem 2.4rem;border-radius:12px;box-shadow:0 8px 32px rgba(99,102,241,0.5);text-decoration:none;transition:all 0.2s;border:1px solid rgba(255,255,255,0.15);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(99,102,241,0.7)';" onmouseout="this.style.transform='';this.style.boxShadow='0 8px 32px rgba(99,102,241,0.5);'">
-          &#128663; Lihat Armada
+          &#128663; Explore Fleet
         </a>
         <a href="/auth/register.php" style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.1);color:white;font-weight:700;font-size:1rem;padding:1rem 2.4rem;border-radius:12px;backdrop-filter:blur(10px);text-decoration:none;transition:all 0.2s;border:1px solid rgba(255,255,255,0.25);" onmouseover="this.style.background='rgba(255,255,255,0.18)';this.style.transform='translateY(-2px)';" onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.transform='';">
-          Daftar Gratis &#8594;
+          Join for Free &#8594;
         </a>
       </div>
 
       <div style="display:flex;align-items:center;justify-content:center;gap:2rem;margin-top:2.5rem;flex-wrap:wrap;">
-        <span style="color:rgba(255,255,255,0.45);font-size:0.8rem;">&#10003; Tanpa kartu kredit</span>
+        <span style="color:rgba(255,255,255,0.45);font-size:0.8rem;">&#10003; No credit card needed</span>
         <span style="color:rgba(255,255,255,0.2);">|</span>
-        <span style="color:rgba(255,255,255,0.45);font-size:0.8rem;">&#10003; Batal kapan saja</span>
+        <span style="color:rgba(255,255,255,0.45);font-size:0.8rem;">&#10003; Cancel anytime</span>
         <span style="color:rgba(255,255,255,0.2);">|</span>
-        <span style="color:rgba(255,255,255,0.45);font-size:0.8rem;">&#10003; Dukungan 24/7</span>
+        <span style="color:rgba(255,255,255,0.45);font-size:0.8rem;">&#10003; 24/7 Support</span>
       </div>
     </div>
   </div>
