@@ -30,11 +30,6 @@ $cars = $stmt->fetchAll();
       Join for Free
     </a>
   </div>
-
-  <div class="hero-scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
 </section>
 
 <!-- ── STATS BAR ── -->
