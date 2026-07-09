@@ -99,11 +99,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book'])) {
           <form method="POST" style="margin-top: 1rem;">
             <div class="form-group">
               <label>Tanggal Mulai</label>
-              <input type="date" name="startDate" min="<?php echo date('Y-m-d'); ?>" required>
+              <input type="text" name="startDate" class="datepicker" placeholder="Pilih Tanggal Mulai..." required>
             </div>
             <div class="form-group">
               <label>Tanggal Selesai</label>
-              <input type="date" name="endDate" min="<?php echo date('Y-m-d'); ?>" required>
+              <input type="text" name="endDate" class="datepicker" placeholder="Pilih Tanggal Selesai..." required>
             </div>
             <button type="submit" name="book" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 1.25rem; font-size: 1.15rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 1rem; box-shadow: 0 10px 30px rgba(99,102,241,0.4); border-radius: 14px;">
               &#10024; Konfirmasi Pemesanan
