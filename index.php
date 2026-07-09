@@ -193,13 +193,13 @@ $cars = $stmt->fetchAll();
 </section>
 
 <!-- ── CTA ── -->
-<div style="margin: 0 2rem 6rem; position: relative; overflow: hidden; border-radius: 28px;">
+<div style="margin: 0 2rem 4rem; position: relative; overflow: hidden; border-radius: 28px;">
   <!-- Layered gradient background -->
   <div style="
     background: linear-gradient(135deg, #312e81 0%, #1e1b4b 40%, #0c0a1e 70%, #0a1628 100%);
     border: 1px solid rgba(129,140,248,0.25);
     border-radius: 28px;
-    padding: 6rem 3rem;
+    padding: 4rem 2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
